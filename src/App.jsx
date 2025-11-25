@@ -390,410 +390,446 @@ export default function App() {
   const headlineTags = Array.isArray(headline.tags) ? headline.tags : [];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
-      {/* TOP BAR */}
-      <header className="border-b border-slate-800 bg-slate-950/95 backdrop-blur flex items-center justify-between px-6 py-3">
-        <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-sm bg-emerald-500 flex items-center justify-center text-xs font-black tracking-tight shadow-lg shadow-emerald-500/40">
-            AI
-          </div>
-          <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-slate-400">
-              MONEYINCRYPTO.com
-            </div>
-            <div className="text-sm font-semibold text-slate-50">
-              AI Managed News Terminal on Digital Assets
-            </div>
-          </div>
-        </div>
+    <>
+      <head>
+        <title>MONEY IN CRYPTO  - AI Terminal</title>
+        <meta
+          name="description"
+          content="Selected AI narrative news that you should know about."
+        />
+        <meta
+          name="keywords"
+          content="crypto news, money in crypto, ai news, ai crypto news, ai crypto trading, ai crypto signals"
+        />
+        <link rel="icon" href="/mic.png" />
+        <meta property="og:title" content="MONEY IN CRYPTO  - AI Terminal" />
+        <meta
+          property="og:description"
+          content="Selected AI narrative news that you should know about."
+        />
+        <meta
+          property="og:image"
+          content="https://corporate.stankeviciusgroup.com/assets/micthumb.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MONEY IN CRYPTO  - AI Terminal" />
+        <meta
+          name="twitter:description"
+          content="Selected AI narrative news that you should know about."
+        />
+        <meta
+          name="twitter:image"
+          content="https://corporate.stankeviciusgroup.com/assets/micthumb.png"
+        />
+      </head>
+      <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
+        {/* TOP BAR */}
+        <header className="border-b border-slate-800 bg-slate-950/95 backdrop-blur flex items-center justify-between px-6 py-3">
+          <div className="flex items-center gap-3">
+            <img
+              src="https://corporate.stankeviciusgroup.com/assets/mic.png"
+              alt="Stankevicius Logo"
+              className="h-8 w-8 rounded-sm object-contain shadow-lg shadow-emerald-500/40"
+            />
 
-        <div className="flex items-center gap-6 text-[11px] font-medium">
-          <div className="flex items-center gap-2">
-            <span className="text-slate-400">BTC</span>
-            <span className="text-emerald-400 font-semibold">$87,420</span>
-            <span className="text-emerald-500">+2.1%</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-slate-400">ETH</span>
-            <span className="text-slate-100 font-semibold">$3,210</span>
-            <span className="text-emerald-500">+1.4%</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-slate-400">TOTAL MC</span>
-            <span className="text-slate-100 font-semibold">$2.1T</span>
-          </div>
-        </div>
-      </header>
-
-      {/* TICKER BAR */}
-      <div className="border-b border-slate-900 bg-slate-900/60 text-[11px] font-medium flex overflow-x-auto whitespace-nowrap scrollbar-none">
-        <div className="flex items-center gap-6 px-6 py-2">
-          <span className="text-amber-300 uppercase tracking-[0.3em] text-[10px]">
-            LIVE AI SIGNALS
-          </span>
-          <span className="text-slate-200">
-            AI models scanning Binance · Bybit · OKX · Cointelegraph · Coindesk for
-            spread, narrative and flow-driven opportunities across majors and
-            high-liquidity altcoins.
-          </span>
-        </div>
-      </div>
-
-      {/* MAIN GRID */}
-      <main className="flex-1 grid grid-cols-12 gap-5 px-6 py-5">
-        {/* LEFT COLUMN: HEADLINE + FEED */}
-        <section className="col-span-12 xl:col-span-8 space-y-4">
-          {/* HEADLINE CARD */}
-          <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3 shadow-[0_0_40px_rgba(0,0,0,0.45)]">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-slate-400">
-                <span className="w-1 h-4 bg-emerald-400 rounded-sm" />
-                <span>AI TOP CRYPTO STORY</span>
+            <div>
+              <div className="text-xs uppercase tracking-[0.22em] text-slate-400">
+                MONEYINCRYPTO.com
               </div>
-              <div className="flex items-center gap-2 text-[10px] text-slate-400">
-                <span className="px-2 py-0.5 rounded-full bg-slate-900/70 border border-slate-700/70">
-                  Auto-ranked by impact
-                </span>
-                <span>{headline.timeAgo}</span>
+              <div className="text-sm font-semibold text-slate-50">
+                AI Managed News Terminal on Digital Assets
               </div>
             </div>
+          </div>
 
-            <h1 className="text-xl md:text-2xl font-semibold leading-tight text-slate-50">
-              {headline.title}
-            </h1>
-
-            <div className="flex flex-wrap items-center gap-3 text-xs">
-              <span className="text-slate-400">{headline.source}</span>
-              <span className="h-3 w-px bg-slate-700" />
-              <span className="text-slate-300">Impact: {headline.impact}</span>
-              <span className="h-3 w-px bg-slate-700" />
-              <span className="text-slate-300">24h Move: {headline.priceMove}</span>
-              <span className="h-3 w-px bg-slate-700" />
-              <span
-                className={`text-[10px] px-2 py-0.5 rounded-full border ${
-                  sentimentColors[headline.sentiment] || ""
-                }`}
-              >
-                {headline.sentiment.toUpperCase()} VIEW
-              </span>
+          <div className="flex items-center gap-6 text-[11px] font-medium">
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">BTC</span>
+              <span className="text-emerald-400 font-semibold">$87,420</span>
+              <span className="text-emerald-500">+2.1%</span>
             </div>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">ETH</span>
+              <span className="text-slate-100 font-semibold">$3,210</span>
+              <span className="text-emerald-500">+1.4%</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">TOTAL MC</span>
+              <span className="text-slate-100 font-semibold">$2.1T</span>
+            </div>
+          </div>
+        </header>
 
-            <p className="text-sm text-slate-200 leading-relaxed max-w-3xl">
-              {headline.summary}
-            </p>
+        {/* TICKER BAR */}
+        <div className="border-b border-slate-900 bg-slate-900/60 text-[11px] font-medium flex overflow-x-auto whitespace-nowrap scrollbar-none">
+          <div className="flex items-center gap-6 px-6 py-2">
+            <span className="text-amber-300 uppercase tracking-[0.3em] text-[10px]">
+              LIVE AI SIGNALS
+            </span>
+            <span className="text-slate-200">
+              AI models scanning Binance · Bybit · OKX · Cointelegraph · Coindesk
+              for spread, narrative and flow-driven opportunities across majors
+              and high-liquidity altcoins.
+            </span>
+          </div>
+        </div>
 
-            <div className="flex flex-wrap items-center gap-2 text-[11px] mt-1">
-              {headlineTags.map((tag) => (
+        {/* MAIN GRID */}
+        <main className="flex-1 grid grid-cols-12 gap-5 px-6 py-5">
+          {/* LEFT COLUMN: HEADLINE + FEED */}
+          <section className="col-span-12 xl:col-span-8 space-y-4">
+            {/* HEADLINE CARD */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3 shadow-[0_0_40px_rgba(0,0,0,0.45)]">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-slate-400">
+                  <span className="w-1 h-4 bg-emerald-400 rounded-sm" />
+                  <span>AI TOP CRYPTO STORY</span>
+                </div>
+                <div className="flex items-center gap-2 text-[10px] text-slate-400">
+                  <span className="px-2 py-0.5 rounded-full bg-slate-900/70 border border-slate-700/70">
+                    Auto-ranked by impact
+                  </span>
+                  <span>{headline.timeAgo}</span>
+                </div>
+              </div>
+
+              <h1 className="text-xl md:text-2xl font-semibold leading-tight text-slate-50">
+                {headline.title}
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-3 text-xs">
+                <span className="text-slate-400">{headline.source}</span>
+                <span className="h-3 w-px bg-slate-700" />
+                <span className="text-slate-300">Impact: {headline.impact}</span>
+                <span className="h-3 w-px bg-slate-700" />
+                <span className="text-slate-300">24h Move: {headline.priceMove}</span>
+                <span className="h-3 w-px bg-slate-700" />
                 <span
-                  key={tag}
-                  className="px-2 py-0.5 rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/70"
+                  className={`text-[10px] px-2 py-0.5 rounded-full border ${
+                    sentimentColors[headline.sentiment] || ""
+                  }`}
                 >
-                  #{tag}
-                </span>
-              ))}
-              <span className="ml-auto text-[10px] text-slate-400">
-                AI narrative summary · Not investment advice
-              </span>
-            </div>
-          </div>
-
-          {/* TOP STORIES TABLE */}
-          <div className="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/80">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold tracking-wide text-slate-100">
-                  AI-SORTED CRYPTO NEWS FEED
-                </span>
-                <span className="text-[10px] text-slate-400">
-                  Auto-ranked by volatility, liquidity and narrative impact
+                  {headline.sentiment.toUpperCase()} VIEW
                 </span>
               </div>
 
-              <div className="flex items-center gap-1 text-[11px]">
-                {["All", "Bullish", "Bearish", "Neutral", "Cautious"].map((label) => (
-                  <button
-                    key={label}
-                    onClick={() => setSentimentFilter(label)}
-                    className={`px-2 py-1 rounded-full border text-[10px] uppercase tracking-wide transition ${
-                      sentimentFilter === label
-                        ? "border-emerald-500 text-emerald-300 bg-emerald-500/10"
-                        : "border-slate-700 text-slate-300 bg-slate-900/60"
-                    }`}
+              <p className="text-sm text-slate-200 leading-relaxed max-w-3xl">
+                {headline.summary}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-2 text-[11px] mt-1">
+                {headlineTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2 py-0.5 rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/70"
                   >
-                    {label}
-                  </button>
+                    #{tag}
+                  </span>
                 ))}
+                <span className="ml-auto text-[10px] text-slate-400">
+                  AI narrative summary · Not investment advice
+                </span>
               </div>
             </div>
 
-            <div className="divide-y divide-slate-800">
-              {filteredNews.map((item) => (
-                <article
-                  key={item.id}
-                  className="px-4 py-3 grid grid-cols-12 gap-3 text-[13px] hover:bg-slate-900/80 transition"
-                >
-                  <div className="col-span-7 flex flex-col gap-1">
-                    <div className="flex items-center gap-2">
-                      <h2 className="font-medium text-slate-50 leading-snug">
-                        {item.title}
-                      </h2>
-                    </div>
-                    <p className="text-slate-300 text-[12px] line-clamp-2">
-                      {item.summary}
-                    </p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[11px] text-slate-400">
-                        {item.source}
-                      </span>
-                      <span className="h-3 w-px bg-slate-700" />
-                      <span className="text-[11px] text-slate-400">
-                        {item.timeAgo}
-                      </span>
-                    </div>
-                  </div>
+            {/* TOP STORIES TABLE */}
+            <div className="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/80">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold tracking-wide text-slate-100">
+                    AI-SORTED CRYPTO NEWS FEED
+                  </span>
+                  <span className="text-[10px] text-slate-400">
+                    Auto-ranked by volatility, liquidity and narrative impact
+                  </span>
+                </div>
 
-                  <div className="col-span-3 flex flex-col justify-between text-[11px]">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span
-                        className={`px-2 py-0.5 rounded-full border ${
-                          sentimentColors[item.sentiment] || ""
-                        }`}
-                      >
-                        {item.sentiment}
-                      </span>
-                      <span className="px-2 py-0.5 rounded-full bg-slate-900/80 border border-slate-700/70 text-slate-200">
-                        Impact: {item.impact}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap gap-1 mt-2">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-1.5 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-700/70"
-                        >
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="col-span-2 flex flex-col items-end justify-between text-right">
-                    <div className="text-xs font-semibold text-emerald-400">
-                      {item.priceMove}
-                    </div>
+                <div className="flex items-center gap-1 text-[11px]">
+                  {["All", "Bullish", "Bearish", "Neutral", "Cautious"].map((label) => (
                     <button
-                      onClick={() => {
-                        setAngleItem(item);
-                        setShowAngleModal(true);
-                      }}
-                      className="mt-2 text-[11px] px-3 py-1 rounded-full border border-emerald-500/60 text-emerald-200 bg-emerald-500/5 hover:bg-emerald-500/15 transition"
+                      key={label}
+                      onClick={() => setSentimentFilter(label)}
+                      className={`px-2 py-1 rounded-full border text-[10px] uppercase tracking-wide transition ${
+                        sentimentFilter === label
+                          ? "border-emerald-500 text-emerald-300 bg-emerald-500/10"
+                          : "border-slate-700 text-slate-300 bg-slate-900/60"
+                      }`}
                     >
-                      View AI Trade Angle
+                      {label}
                     </button>
-                  </div>
-                </article>
-              ))}
-
-              {filteredNews.length === 0 && (
-                <div className="px-4 py-6 text-center text-sm text-slate-400">
-                  No stories match this filter yet. Connect your data feed or
-                  adjust filters.
+                  ))}
                 </div>
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* RIGHT COLUMN: AI PANELS */}
-        <aside className="col-span-12 xl:col-span-4 space-y-4">
-          {/* AI MACRO PANEL */}
-          <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <div className="text-xs font-semibold text-slate-100">
-                AI Macro Heatmap
-              </div>
-              <div className="text-[10px] text-slate-400 flex items-center gap-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Live model snapshot
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-3 text-[11px]">
-              <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
-                <span className="text-slate-400 text-[10px] uppercase tracking-wide">
-                  Trend Bias
-                </span>
-                <span className="text-emerald-300 font-semibold">
-                  {macro.trendLabel}
-                </span>
-                <span className="text-slate-400">
-                  {macro.trendDesc || "Live BTC/ETH trend based on 24h change."}
-                </span>
               </div>
 
-              <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
-                <span className="text-slate-400 text-[10px] uppercase tracking-wide">
-                  Volatility Regime
-                </span>
-                <span className="text-amber-300 font-semibold">
-                  {macro.volaLabel}
-                </span>
-                <span className="text-slate-400">
-                  {macro.volaDesc ||
-                    "24h realised volatility regime from BTC/ETH moves."}
-                </span>
-              </div>
-
-              <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
-                <span className="text-slate-400 text-[10px] uppercase tracking-wide">
-                  Liquidity Pulse
-                </span>
-                <span className="text-slate-200 font-semibold">
-                  {macro.liqLabel}
-                </span>
-                <span className="text-slate-400">
-                  {macro.liqDesc || "Liquidity proxy from BTC/ETH 24h volume."}
-                </span>
-              </div>
-            </div>
-
-            <p className="text-[11px] text-slate-400 border-t border-slate-800 pt-3 mt-1">
-              Live macro signals derived from BTC/ETH 24h trend, realised
-              volatility, and liquidity conditions. Updated automatically using
-              CoinGecko market data.
-            </p>
-          </div>
-
-          {/* AI TRADE IDEAS */}
-          <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <div className="text-xs font-semibold text-slate-100">
-                AI Trade Idea Board
-              </div>
-              <span className="text-[10px] text-slate-400">
-                Live engine · Macro × News × Volatility
-              </span>
-            </div>
-
-            <div className="space-y-2 text-[11px]">
-              {tradeIdeas.map((idea) => (
-                <div key={idea.id} className="flex items-start gap-3">
-                  <div className="px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/40 text-emerald-200 text-[10px] mt-0.5">
-                    {idea.tag}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-100 font-medium">
-                        {idea.title}
-                      </span>
-                      <span className="text-emerald-400 font-semibold">
-                        {idea.edge}
-                      </span>
+              <div className="divide-y divide-slate-800">
+                {filteredNews.map((item) => (
+                  <article
+                    key={item.id}
+                    className="px-4 py-3 grid grid-cols-12 gap-3 text-[13px] hover:bg-slate-900/80 transition"
+                  >
+                    <div className="col-span-7 flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <h2 className="font-medium text-slate-50 leading-snug">
+                          {item.title}
+                        </h2>
+                      </div>
+                      <p className="text-slate-300 text-[12px] line-clamp-2">
+                        {item.summary}
+                      </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-[11px] text-slate-400">
+                          {item.source}
+                        </span>
+                        <span className="h-3 w-px bg-slate-700" />
+                        <span className="text-[11px] text-slate-400">
+                          {item.timeAgo}
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-slate-400 mt-0.5">{idea.summary}</p>
-                    <div className="mt-1 flex flex-wrap items-center gap-2 text-[10px] text-slate-400">
-                      <span className="px-1.5 py-0.5 rounded bg-slate-900/80 border border-slate-700/70 text-slate-200">
-                        {idea.category}
-                      </span>
-                      <span className="h-3 w-px bg-slate-700" />
-                      <span>Conviction: {idea.conviction}</span>
-                      <span className="h-3 w-px bg-slate-700" />
-                      <span>Horizon: {idea.horizon}</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 mt-1">
-                      Risk view: {idea.risk}
-                    </p>
-                  </div>
-                </div>
-              ))}
 
-              {tradeIdeas.length === 0 && (
-                <div className="text-[11px] text-slate-400 py-4">
-                  Engine is bootstrapping… waiting for macro + news signals.
+                    <div className="col-span-3 flex flex-col justify-between text-[11px]">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`px-2 py-0.5 rounded-full border ${
+                            sentimentColors[item.sentiment] || ""
+                          }`}
+                        >
+                          {item.sentiment}
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-slate-900/80 border border-slate-700/70 text-slate-200">
+                          Impact: {item.impact}
+                        </span>
+                      </div>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-1.5 py-0.5 rounded bg-slate-900/80 text-slate-300 border border-slate-700/70"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="col-span-2 flex flex-col items-end justify-between text-right">
+                      <div className="text-xs font-semibold text-emerald-400">
+                        {item.priceMove}
+                      </div>
+                      <button
+                        onClick={() => {
+                          setAngleItem(item);
+                          setShowAngleModal(true);
+                        }}
+                        className="mt-2 text-[11px] px-3 py-1 rounded-full border border-emerald-500/60 text-emerald-200 bg-emerald-500/5 hover:bg-emerald-500/15 transition"
+                      >
+                        View AI Trade Angle
+                      </button>
+                    </div>
+                  </article>
+                ))}
+
+                {filteredNews.length === 0 && (
+                  <div className="px-4 py-6 text-center text-sm text-slate-400">
+                    No stories match this filter yet. Connect your data feed or
+                    adjust filters.
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+
+          {/* RIGHT COLUMN: AI PANELS */}
+          <aside className="col-span-12 xl:col-span-4 space-y-4">
+            {/* AI MACRO PANEL */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="text-xs font-semibold text-slate-100">
+                  AI Macro Heatmap
                 </div>
-              )}
+                <div className="text-[10px] text-slate-400 flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Live model snapshot</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-[11px]">
+                <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wide">
+                    Trend Bias
+                  </span>
+                  <span className="text-emerald-300 font-semibold">
+                    {macro.trendLabel}
+                  </span>
+                  <span className="text-slate-400">
+                    {macro.trendDesc || "Live BTC/ETH trend based on 24h change."}
+                  </span>
+                </div>
+
+                <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wide">
+                    Volatility Regime
+                  </span>
+                  <span className="text-amber-300 font-semibold">
+                    {macro.volaLabel}
+                  </span>
+                  <span className="text-slate-400">
+                    {macro.volaDesc ||
+                      "24h realised volatility regime from BTC/ETH moves."}
+                  </span>
+                </div>
+
+                <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3 flex flex-col gap-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wide">
+                    Liquidity Pulse
+                  </span>
+                  <span className="text-slate-200 font-semibold">
+                    {macro.liqLabel}
+                  </span>
+                  <span className="text-slate-400">
+                    {macro.liqDesc || "Liquidity proxy from BTC/ETH 24h volume."}
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-[11px] text-slate-400 border-t border-slate-800 pt-3 mt-1">
+                Live macro signals derived from BTC/ETH 24h trend, realised
+                volatility, and liquidity conditions. Updated automatically using
+                CoinGecko market data.
+              </p>
             </div>
 
-            <p className="text-[10px] text-slate-500 border-t border-slate-800 pt-3 mt-1">
-              Generated heuristically from macro trend, volatility regime and
-              high-impact news. Research tool only.
-            </p>
-          </div>
-        </aside>
-      </main>
+            {/* AI TRADE IDEAS */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="text-xs font-semibold text-slate-100">
+                  AI Trade Idea Board
+                </div>
+                <span className="text-[10px] text-slate-400">
+                  Live engine · Macro × News × Volatility
+                </span>
+              </div>
 
-      {/* AI TRADE ANGLE MODAL */}
-      {showAngleModal && angleItem && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-slate-100">
-                AI Trade Angle
-              </h2>
+              <div className="space-y-2 text-[11px]">
+                {tradeIdeas.map((idea) => (
+                  <div key={idea.id} className="flex items-start gap-3">
+                    <div className="px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/40 text-emerald-200 text-[10px] mt-0.5">
+                      {idea.tag}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-100 font-medium">
+                          {idea.title}
+                        </span>
+                        <span className="text-emerald-400 font-semibold">
+                          {idea.edge}
+                        </span>
+                      </div>
+                      <p className="text-slate-400 mt-0.5">{idea.summary}</p>
+                      <div className="mt-1 flex flex-wrap items-center gap-2 text-[10px] text-slate-400">
+                        <span className="px-1.5 py-0.5 rounded bg-slate-900/80 border border-slate-700/70 text-slate-200">
+                          {idea.category}
+                        </span>
+                        <span className="h-3 w-px bg-slate-700" />
+                        <span>Conviction: {idea.conviction}</span>
+                        <span className="h-3 w-px bg-slate-700" />
+                        <span>Horizon: {idea.horizon}</span>
+                      </div>
+                      <p className="text-[10px] text-slate-500 mt-1">
+                        Risk view: {idea.risk}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+
+                {tradeIdeas.length === 0 && (
+                  <div className="text-[11px] text-slate-400 py-4">
+                    Engine is bootstrapping… waiting for macro + news signals.
+                  </div>
+                )}
+              </div>
+
+              <p className="text-[10px] text-slate-500 border-t border-slate-800 pt-3 mt-1">
+                Generated heuristically from macro trend, volatility regime and
+                high-impact news. Research tool only.
+              </p>
+            </div>
+          </aside>
+        </main>
+
+        {/* AI TRADE ANGLE MODAL */}
+        {showAngleModal && angleItem && (
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold text-slate-100">
+                  AI Trade Angle
+                </h2>
+                <button
+                  onClick={() => setShowAngleModal(false)}
+                  className="text-slate-400 hover:text-slate-200 text-sm"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <h3 className="text-slate-100 font-medium text-md mb-2">
+                {angleItem.title}
+              </h3>
+              <p className="text-slate-300 text-sm mb-4">{angleItem.summary}</p>
+
+              <div className="grid grid-cols-2 gap-4 text-[12px]">
+                <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
+                  <div className="text-slate-400 text-[10px]">Sentiment</div>
+                  <div className="text-slate-100 font-semibold">
+                    {angleItem.sentiment}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
+                  <div className="text-slate-400 text-[10px]">Impact</div>
+                  <div className="text-slate-100 font-semibold">
+                    {angleItem.impact}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
+                  <div className="text-slate-400 text-[10px]">24h Price Move</div>
+                  <div className="text-emerald-400 font-semibold">
+                    {angleItem.priceMove}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
+                  <div className="text-slate-400 text-[10px]">Source</div>
+                  <div className="text-slate-100 font-semibold">
+                    {angleItem.source}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 text-[12px] text-slate-300 space-y-1">
+                <p>• AI narrative: Based on sentiment & volatility alignment.</p>
+                <p>• Model confidence: Derived from cross-source correlations.</p>
+                <p>• Trade angle: Event-driven short-term opportunity.</p>
+              </div>
+
               <button
                 onClick={() => setShowAngleModal(false)}
-                className="text-slate-400 hover:text-slate-200 text-sm"
+                className="mt-6 w-full py-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 rounded-lg hover:bg-emerald-500/30 transition text-sm"
               >
-                ✕
+                Close
               </button>
             </div>
-
-            <h3 className="text-slate-100 font-medium text-md mb-2">
-              {angleItem.title}
-            </h3>
-            <p className="text-slate-300 text-sm mb-4">{angleItem.summary}</p>
-
-            <div className="grid grid-cols-2 gap-4 text-[12px]">
-              <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
-                <div className="text-slate-400 text-[10px]">Sentiment</div>
-                <div className="text-slate-100 font-semibold">
-                  {angleItem.sentiment}
-                </div>
-              </div>
-              <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
-                <div className="text-slate-400 text-[10px]">Impact</div>
-                <div className="text-slate-100 font-semibold">
-                  {angleItem.impact}
-                </div>
-              </div>
-              <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
-                <div className="text-slate-400 text-[10px]">24h Price Move</div>
-                <div className="text-emerald-400 font-semibold">
-                  {angleItem.priceMove}
-                </div>
-              </div>
-              <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700">
-                <div className="text-slate-400 text-[10px]">Source</div>
-                <div className="text-slate-100 font-semibold">
-                  {angleItem.source}
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4 text-[12px] text-slate-300 space-y-1">
-              <p>• AI narrative: Based on sentiment &amp; volatility alignment.</p>
-              <p>• Model confidence: Derived from cross-source correlations.</p>
-              <p>• Trade angle: Event-driven short-term opportunity.</p>
-            </div>
-
-            <button
-              onClick={() => setShowAngleModal(false)}
-              className="mt-6 w-full py-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 rounded-lg hover:bg-emerald-500/30 transition text-sm"
-            >
-              Close
-            </button>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* FOOTER */}
-      <footer className="border-t border-slate-900 bg-slate-950/95 px-6 py-3 text-[11px] text-slate-500 flex items-center justify-between">
-        <span>
-          © {new Date().getFullYear()}. MONEYINCRYPTO.com is AI managed news
-          platform on digital assets. MONEYINCRYPTO.com does not provide
-          financial advise, nor services to clients.
-        </span>
-      </footer>
-    </div>
+        {/* FOOTER */}
+        <footer className="border-t border-slate-900 bg-slate-950/95 px-6 py-3 text-[11px] text-slate-500 flex items-center justify-between">
+          <span>
+            © {new Date().getFullYear()}. MONEYINCRYPTO.com is AI managed news
+            platform on digital assets. MONEYINCRYPTO.com does not provide
+            financial advise, nor services to clients.
+          </span>
+        </footer>
+      </div>
+    </>
   );
 }
