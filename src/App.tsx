@@ -1,11 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
 
-// Crypto AI News Terminal – Bloomberg-style layout
-// Uses LIVE announcements fetched from major exchanges and crypto media via RSS → JSON.
-// NOTE: In production you should proxy these through your own backend to avoid CORS / rate limits
-// and to have more control over caching and error handling.
-
-// LIVE NEWS SOURCES (ANNOUNCEMENTS + MEDIA)
 const EXCHANGE_NEWS_ENDPOINTS = [
   {
     name: "Binance",
